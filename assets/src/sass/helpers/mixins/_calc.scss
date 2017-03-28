@@ -1,0 +1,6 @@
+@mixin calc ($property, $value){
+  #{$property}:-webkit-calc( 100% - #{$value} );
+  #{$property}:-moz-calc( 100% - #{$value} );
+  #{$property}:-o-calc( 100% - #{$value} );
+  #{$property}:calc( 100% - #{$value} );
+}

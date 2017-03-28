@@ -1,0 +1,54 @@
+// Media breakpoints
+
+$break-md  : 1199px !default;
+$break-sm  : 991px !default;
+$break-xs  : 767px !default;
+$mobile-ls : 500px !default;
+$break-mb  : 479px !default;   
+
+// MEDIA QUERY
+@mixin media($screen)
+{
+
+    @if $screen == lg{
+        @media (min-width: $break-md){
+            @content;
+        }
+    }
+
+    @if $screen == md{
+        @media (max-width: $break-md){
+            @content;
+        }
+    }@else if$screen == sm{
+        @media (max-width: $break-sm){
+            @content;
+        }
+    }@else if$screen == sm-up{
+        @media (min-width: $break-sm){
+            @content;
+        }
+    }@else if$screen == md-up{
+        @media (min-width: $break-md){
+            @content;
+        }
+    }@else if $screen == xs{
+        @media (max-width: $break-xs){
+            @content;
+        }
+    }
+    @else if $screen == ls{
+        @media (max-width: $mobile-ls){
+            @content;
+        }
+    }@else if $screen == mb{
+        @media (max-width: $break-mb){
+            @content;
+        }
+    }@else if $screen == not-mb{
+        @media (min-width: $break-xs){
+            @content;
+        }
+    }
+} //media query
+

@@ -1,0 +1,16 @@
+#scroll-to-top{
+	position: fixed; 
+	z-index: 999999; 
+	bottom: 20px; 
+	right: 20px; 
+	display: block;
+	
+	span{
+		cursor:pointer;
+		display: inline-block;
+		padding: 10px 20px;
+		background: $primary-color;
+		color: $white;
+		border-radius: 2px;
+	}
+}

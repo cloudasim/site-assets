@@ -1,0 +1,15 @@
+body{
+	color: $black;
+	font-family: $primary-font;
+	overflow-x: hidden !important;
+}
+*{
+	-webkit-outlin:none !important;
+	outline:none !important;
+
+	&:hover,
+	&:focus{
+		-webkit-outlin:none !important;
+		outline:none !important;
+	}
+}

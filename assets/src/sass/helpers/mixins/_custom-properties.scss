@@ -1,0 +1,23 @@
+@mixin hvcenter(){
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder { @content }
+  :-moz-placeholder           { @content }
+  ::-moz-placeholder          { @content }
+  :-ms-input-placeholder      { @content }  
+}
+
+@mixin coverimg($attachment: fixed) {
+    background-repeat:no-repeat;
+    background-position: top center;
+    background-attachment: $attachment; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
