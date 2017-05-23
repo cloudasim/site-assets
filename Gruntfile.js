@@ -8,8 +8,8 @@ module.exports = function( grunt ){
 		      	style: 'expanded'
 		      },
 		      files: {                         // Dictionary of files
-		        './assets/src/css/main.css': './assets/src/sass/main.scss',       // 'destination': 'source'
-		        './style.css' : './assets/src/sass/style.scss'
+		        './assets/src/css/main.css': './assets/src/sass/below-fold/main.scss',       // 'destination': 'source'
+		        './style.css' : './assets/src/sass/above-fold/style.scss'
 		    	}
 			}
 		},
@@ -20,19 +20,15 @@ module.exports = function( grunt ){
 			},
 			/* Added new JS here*/	
 			js: { 
-				src: [ 
-				'./assets/src/js/wrapper/start.js',
+				src: [
 				// './node_modules/bootstrap/dist/js/bootstrap.js',
-				// './assets/src/js/nicescroll.3.6.8.min.js',
 				'./assets/src/js/script.js',
-				'./assets/src/js/wrapper/end.js'
 				],
 				dest: './assets/build/js/script.js'
 			},
 			/* Add CSS here*/
 			css: {
-				src: [ 
-				// './node_modules/bootstrap/dist/css/bootstrap.css',
+				src: [
 				'./node_modules/font-awesome/css/font-awesome.css',
 				'./assets/src/css/*.css'
 				],
@@ -84,7 +80,7 @@ module.exports = function( grunt ){
 				
 			},
 			css : {
-				files : ['./assets/src/sass/**/*.scss'],
+				files : ['./assets/src/sass/**/*.scss', './assets/src/sass/above-fold/*.scss', './assets/src/sass/below-fold/*.scss', './assets/src/sass/below-fold/**/*.scss', ],
 				tasks : ['css']
 			}
 		}
@@ -98,8 +94,8 @@ module.exports = function( grunt ){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	// grunt.loadNpmTasks('grunt-contrib-connect');
 
-    grunt.registerTask( 'css', [ 'sass', 'concat', 'cssmin'] );
-    grunt.registerTask( 'js', [ 'concat', 'uglify' ] );
+    grunt.registerTask( 'css', [ 'sass', 'concat:css', 'cssmin'] );
+    grunt.registerTask( 'js', [ 'concat:js', 'uglify' ] );
 
     grunt.registerTask('default', ['sass', 'concat','uglify','cssmin', 'copy'] );
 }

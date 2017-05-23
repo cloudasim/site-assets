@@ -1,33 +1,34 @@
 /*
-Theme Name: nylegends
+Theme Name: siteassets
 Theme URI: http://underscores.me/
 Author: Eaglevision IT Se
 Author URI: http://underscores.me/
-Description: Custom theme: nylegends, developed by Eaglevision IT Se
+Description: Custom theme: siteassets, developed by Eaglevision IT Se
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: nylegends
+Text Domain: siteassets
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-nylegends is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+siteassets is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
-@import 'helpers/variables';
-@import 'helpers/mixins';
+@import '../helpers/variables';
+@import '../helpers/mixins';
 
 // @import 'base/underscore'; //import this is bootstrap is not used
-@import 'helpers/helper-classes';
-@import '../../../node_modules/bootstrap/scss/bootstrap-reboot';
-@import '../../../node_modules/bootstrap/scss/bootstrap-grid';
-@import 'base/typography';
-@import 'layouts/header';
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
+@import '../base/site-reset';
+@import '../base/typography';
 
-
+// Above Fold Components
+@import 'header';
+@import 'nav';
+@import 'main-carousel';
